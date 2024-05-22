@@ -19,6 +19,11 @@ export default function TextForms(props) {
     let newText = '';
       setText(newText);
 }
+const copy=()=>{
+  console.log("Copy text");
+  var text = document.getElementById("myBox");
+  navigator.clipboard.writeText(text.value);
+}
 
 const reverseString=()=> {
   let strRev =  Array.from(text).reverse().join("");
@@ -42,6 +47,7 @@ const reverseString=()=> {
     <button className="btn btn-primary mx-1" onClick={ConvertLower}>Convert To Lowercase</button>
     <button className="btn btn-primary mx-1" onClick={Clear}>Clear</button>
     <button className="btn btn-primary mx-1" onClick={reverseString}>Reverse</button>
+    <button className="btn btn-primary mx-1" onClick={copy}>CopyText</button>
       
     </div>
     <div className="container my-3">
